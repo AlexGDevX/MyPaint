@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Paint</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="container">
+          <section class="tools-board">
+               <div class="row">
+                    <label class="title">Shapes</label>
+                    <UL class="options">
+                         <li class="option tool" id="rectangle">
+                              <img src="./assets/rectangle.svg" alt="rectangle">
+                              <span>Rectangle</span>
+                         </li>
+                         <li class="option tool" id="circle">
+                              <img src="./assets/circle.svg" alt="circle">
+                              <span>Circle</span>
+                         </li>
+                         <li class="option tool" id="triangle">
+                              <img src="./assets/triangle.svg" alt="triangle">
+                              <span>Triangle</span>
+                         </li>
+                         <li class="option">
+                              <input type="checkbox" id="fill-color">
+                              <label for="fill-color">Fill color</label>
+                         </li>
+                    </UL>
+               </div>
+
+               <div class="row">
+                    <label class="title">Options</label>
+                    <UL class="options">
+                         <li class="option active tool" id="brush">
+                              <img src="./assets/brush.svg" alt="brush">
+                              <span>Brush</span>
+                         </li>
+                         <li class="option tool" id="eraser">
+                              <img src="./assets/eraser.svg" alt="eraser">
+                              <span>Eraser</span>
+                         </li>
+                         <li class="option">
+                              <input type="range" id="size-slider" min="1" max="50" value="10">
+                         </li>
+                    </UL>
+               </div>
+
+               <div id="customCursor"></div>
+
+               <div class="row colors">
+                    <label class="title">Colors</label>
+                    <ul class="options">
+                         <li class="option"></li>
+                         <li class="option selected"></li>
+                         <li class="option"></li>
+                         <li class="option"></li>
+                         <li class="option">
+                              <input type="color" id="color-picker" value="#4A98F7">
+                         </li>
+                    </ul>
+               </div>
+
+               <div class="row canvas-size">
+                    <label class="title">New Size</label>
+                    <ul class="options">
+                        <li class="option">
+                            <label for="canvas-width">Width:</label>
+                            <input type="number" id="canvas-width" min="50" max="4000" value="900">
+                        </li>
+                        <li class="option">
+                            <label for="canvas-height">Height:</label>
+                            <input type="number" id="canvas-height" min="50" max="4000" value="700">
+                        </li>
+                        <li class="option">
+                            <button id="resize-canvas">Resize</button>
+                        </li>
+                    </ul>
+               </div>
+                
+               <div class="row zoom-controls">
+                    <label class="title">Zoom</label>
+                    <input type="range" id="zoom-slider" min="0.3" max="10" step="0.1" value="1">
+                    <button id="reset-zoom">↻</button>
+               </div>
+
+               <div class="row buttons">
+                    <button class="clear-canvas">Clear Canvas</button>
+                    <button class="save-img">Save As Image</button>
+               </div>
+
+               <div class="row buttons">
+                    <button class="dark-btn" id="toggle-theme">Dark Mode</button>
+               </div>
+
+          </section>          
+          <section class="drawing-board">
+               <canvas></canvas>
+          </section>
+     </div>
+</body>
+<script src="script.js"></script>
+</html>
